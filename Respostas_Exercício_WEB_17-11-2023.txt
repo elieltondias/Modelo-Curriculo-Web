@@ -1,0 +1,225 @@
+1 - Escreva um programa que imprima os números de 1 a 10 no console.
+
+for (let i = 1; i <= 10; i++){
+  console.log(i);
+}
+----------------------------------------------------------------------------------------------------------
+
+
+2 - Crie uma função que receba dois números como argumentos e retorne a soma deles.
+
+function soma(numero1, numero2){
+  return numero1 + numero2;
+}
+
+const resultado = soma(5, 7);
+console.log(resultado);
+----------------------------------------------------------------------------------------------------------
+
+
+3 - Escreva um programa que verifique se um número é par ou ímpar.
+
+function verificarPar(numero){
+  if (numero % 2 === 0) {
+    return "par";
+  } else {
+    return "impar";
+  }
+}
+
+const resultado = verificarPar(113);
+
+console.log(`${numeroParaVerificar} é ${resultado}.`);
+----------------------------------------------------------------------------------------------------------
+
+
+4 - Crie um array com os números de 1 a 5 e imprima cada elemento no console.
+
+const numeros = [1, 2, 3, 4, 5];
+
+for (let i = 0; i < numeros.length; i++){
+  console.log(numeros[i]);
+}
+----------------------------------------------------------------------------------------------------------
+
+
+5 - Crie uma função que receba um array de números e retorne a soma de todos os elementos.
+
+function somarArray(array){
+  let soma = 0;
+  for (let i = 0; i < array.length; i++) {
+    soma += array[i];
+  }
+  return soma;
+}
+
+const numeros = [1, 2, 3, 4, 5];
+const resultado = somarArray(numeros);
+console.log(`A soma dos elementos é: ${resultado}`);
+----------------------------------------------------------------------------------------------------------
+
+
+6 - Escreva um programa que calcule o fatorial de um número.
+
+function calcularFatorial(numero){
+  if (numero === 0 || numero === 1) {
+    return 1; // O fatorial de 0 e 1 é 1
+  } else {
+    let fatorial = 1;
+    for (let i = 2; i <= numero; i++) {
+      fatorial *= i;
+    }
+    return fatorial;
+  }
+}
+
+const numeroParaCalcular = 5;
+const resultadoFatorial = calcularFatorial(numeroParaCalcular);
+console.log(`O fatorial de ${numeroParaCalcular} é: ${resultadoFatorial}`);
+----------------------------------------------------------------------------------------------------------
+
+
+7- Crie uma função que receba uma string e retorne o número de caracteres.
+
+function contarCaracteres(str){
+  return str.length;
+}
+
+var minhaString = "Olá, mundo!";
+var numeroDeCaracteres = contarCaracteres(minhaString);
+console.log(numeroDeCaracteres);
+----------------------------------------------------------------------------------------------------------
+
+
+8 - Escreva um programa que verifique se uma palavra é um palíndromo.
+
+function verificarPalindromo(palavra) {
+  palavra = palavra.toLowerCase().replace(/\s/g, '');
+
+  var inverso = palavra.split('').reverse().join('');
+
+  return palavra === inverso;
+}
+
+var palavra1 = "arara";
+var palavra2 = "cachorro";
+
+console.log(verificarPalindromo(palavra1));
+console.log(verificarPalindromo(palavra2));
+----------------------------------------------------------------------------------------------------------
+
+
+9 - Crie uma função que receba um número e retorne a sequência de Fibonacci até esse número.
+
+function sequenciaFibonacci(n) {
+  let fibonacci = [0, 1];
+
+  for (let i = 2; i <= n; i++) {
+    let nextFibonacci = fibonacci[i - 1] + fibonacci[i - 2];
+    fibonacci.push(nextFibonacci);
+  }
+
+  return fibonacci;
+}
+
+let resultado = sequenciaFibonacci(10);
+console.log(resultado);
+----------------------------------------------------------------------------------------------------------
+
+
+10 - Escreva um programa que remova elementos duplicados de um array.
+
+function removerDuplicados(array) {
+  // Cria um conjunto a partir do array, removendo duplicatas
+  let conjunto = new Set(array);
+
+  // Converte o conjunto de volta para um array
+  let arraySemDuplicatas = Array.from(conjunto);
+
+  return arraySemDuplicatas;
+}
+
+let arrayComDuplicatas = [1, 2, 3, 4, 3, 4, 2, 5, 6, 1];
+let arraySemDuplicatas = removerDuplicados(arrayComDuplicatas);
+
+console.log(arraySemDuplicatas);
+----------------------------------------------------------------------------------------------------------
+
+
+11 - Crie uma função que receba um número e retorne o seu quadrado. Use arrow function.
+
+const calcularQuadrado = (numero) => {
+  return numero ** 2;
+};
+
+const numero = 5;
+const resultado = calcularQuadrado(numero);
+console.log(resultado);
+----------------------------------------------------------------------------------------------------------
+
+
+12 - Escreva um programa que gere um número aleatório entre 1 e 100.
+
+function gerarNumeroAleatorio() {
+  const numeroAleatorioDecimal = Math.random();
+  const numeroAleatorio = Math.floor(numeroAleatorioDecimal * 100) + 1;
+
+  return numeroAleatorio;
+}
+
+const numeroAleatorio = gerarNumeroAleatorio();
+console.log(numeroAleatorio);
+----------------------------------------------------------------------------------------------------------
+
+
+13 - Crie uma função que receba um array de strings e retorne um novo array com as strings ordenadas em ordem alfabética.
+
+function ordenarStrings(arrayDeStrings) {
+  const arrayOrdenado = arrayDeStrings.sort();
+
+  return arrayOrdenado;
+}
+
+const stringsParaOrdenar = ["banana", "laranja", "maçã", "uva"];
+const stringsOrdenadas = ordenarStrings(stringsParaOrdenar);
+
+console.log(stringsOrdenadas);
+----------------------------------------------------------------------------------------------------------
+
+
+14 - Escreva um programa que calcule a média de um array de números.
+
+function calcularMedia(arrayDeNumeros) {
+  if (arrayDeNumeros.length === 0) {
+    return null; // ou algum valor padrão, dependendo dos requisitos
+  }
+
+  const soma = arrayDeNumeros.reduce((acc, numero) => acc + numero, 0);
+  const media = soma / arrayDeNumeros.length;
+
+  return media;
+}
+
+const numeros = [10, 20, 30, 40, 50];
+const mediaCalculada = calcularMedia(numeros);
+
+console.log(mediaCalculada);
+----------------------------------------------------------------------------------------------------------
+
+
+15 - Crie uma função que receba um objeto e retorne uma lista com as chaves desse objeto.
+
+function obterChavesDoObjeto(objeto) {
+  const chaves = Object.keys(objeto);
+
+  return chaves;
+}
+
+const meuObjeto = {
+  nome: "harry potter",
+  idade: 24,
+  cidade: "joao pessoa",
+};
+
+const listaDeChaves = obterChavesDoObjeto(meuObjeto);
+console.log(listaDeChaves);
